@@ -10,7 +10,6 @@ const notification = createSlice({
   initialState,
   reducers: {
     getNotification(state, {payload}) {
-        debugger
       state.notifyStatus = payload.notifyStatus;
       state.messege = payload.messege;
     },

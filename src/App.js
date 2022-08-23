@@ -10,6 +10,7 @@ function App() {
 const cart = useSelector(state => state.products.cart);
 const dispatch = useDispatch();
 const firstRender = useRef(true);
+const isLoggedInToCart = useSelector(state => state.loginization.isLoggedIn);
 
   useEffect(() => {
     if (firstRender.current) {
@@ -29,9 +30,12 @@ const firstRender = useRef(true);
 
   return (
     <div className="App">
-      {/* <Auth /> */}
-      <Layout />
-    </div>
+      {isLoggedInToCart === false ? 
+       <Auth />
+       : <Layout />
+    }
+      
+      </div>
   );
 }
 
