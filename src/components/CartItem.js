@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons'
 import "./Cart.css";
 
-const CartItem = ({ name, quantity, total, price, id }) => {
+const CartItem = ({ name, quantity, price, id }) => {
   const dispatch = useDispatch();
   
   return (
@@ -14,7 +14,7 @@ const CartItem = ({ name, quantity, total, price, id }) => {
       <h2> {name}</h2>
       <p>${price} /-</p>
       <p>x{quantity}</p>
-      <article>Total ${total}</article>
+      <article>Total ${price * quantity}</article>
       <button className="cart-actions" onClick={() => dispatch(decrementQuantity(id))}>
         -
       </button>

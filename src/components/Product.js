@@ -7,11 +7,6 @@ const Product = ({ name, id, imgURL, price}) => {
   
   const dispatch = useDispatch()
 
-  const onBtnClick = () => {
-    dispatch(addInCart);
-  }
-
-
   return (
     <div className="card">
       <img src={imgURL} alt={name} />

@@ -10,14 +10,19 @@ const CartItems = () => {
 
   return (
     <div className="cart-container">
-      <h2>Your Cart</h2>
+      {cartProducts.length === 0? <h2>Your cart is empty</h2>
+      : 
+      <>
+      <h2>Your cart</h2>
       <ul>
-        <li>
-          {cartProducts.map(({id, price, name, quantity}) => {
-            return <CartItem key={id} id={id} price={price} name={name} quantity={quantity} />
-          })}
-        </li>
-      </ul>
+      <li>
+        {cartProducts.map(({id, price, name, quantity}) => {
+          return <CartItem key={id} id={id} price={price} name={name} quantity={quantity} />
+        })}
+      </li>
+    </ul>
+    </>}
+      
     </div>
   );
 };

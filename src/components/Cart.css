@@ -31,6 +31,7 @@ li {
   background: #2f3c7e;
   color: #fbeaeb;
   position: relative;
+  margin-bottom: 15px;
 }
 .cart-actions {
   color: white;

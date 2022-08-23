@@ -4,13 +4,17 @@ const initialState = {
   status: "idle",
   productsItems: [],
   cart: [],
-  totalPrice: 0
+  totalPrice: 0,
+  login: false
 };
 
 const products = createSlice({
   name: "products",
   initialState,
   reducers: {
+    loginInCart: (state) => {
+      state.login = !state.login
+    },
     productsPending: (state) => {
       state.status = "loading";
     },
@@ -45,6 +49,10 @@ const products = createSlice({
   },
 });
 
-export const { addInCart, fetchProducts, incrementQuantity, decrementQuantity, removeProduct } = products.actions;
+export const {
+   addInCart, removeProduct,
+   fetchProducts, incrementQuantity, decrementQuantity, 
+   loginInCart
+   } = products.actions;
 
 export default products.reducer;
